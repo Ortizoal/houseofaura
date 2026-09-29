@@ -9,5 +9,8 @@
 @media (min-width:801px) and (max-width:1200px){.reel-video{height:min(78vh,780px)}}
 @media (max-width:800px){.reel-video{height:auto;max-height:78vh;object-fit:contain}}
 .site-header{box-shadow:0 8px 24px rgba(6,67,36,.04)}
+.order{display:block;background:white}
+.order-copy{display:none}
+.order-form{max-width:720px;margin:0 auto}
 .product-image{background:#edf3ed;border-radius:2px}
 .button{transition:transform .2s ease,box-shadow .2s ease}.button:hover{box-shadow:0 10px 24px rgba(6,67,36,.14)}
