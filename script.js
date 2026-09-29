@@ -10,6 +10,7 @@ const products=[
 ];
 const grid=document.querySelector('[data-products]');
 const orderEmail='latsuortiz@gmail.com';
+document.querySelector('#email').closest('label').insertAdjacentHTML('afterend','<label for="phone">Phone number<input id="phone" type="tel" name="phone" required placeholder="e.g. 020 604 7722" /></label>');
 document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{a.href=`mailto:${orderEmail}`;a.textContent=orderEmail});
 document.querySelector('#orderForm').addEventListener('submit',async e=>{e.stopImmediatePropagation();e.preventDefault();const form=e.currentTarget;const data=new FormData(form);data.append('_subject',`House of Aura order enquiry from ${data.get('name')}`);data.append('_captcha','false');try{const response=await fetch(`https://formsubmit.co/ajax/${orderEmail}`,{method:'POST',headers:{Accept:'application/json'},body:data});if(!response.ok)throw new Error('Submission failed');form.reset();document.querySelector('[data-success]').hidden=false}catch(error){alert('We could not send your enquiry right now. Please try again.')}},true);
 function render(filter='all'){grid.innerHTML=products.filter(p=>filter==='all'||p.type===filter).map(p=>`<article class="product-card" data-name="${p.name}"><div class="product-image" style="--tone:${p.tone}"></div><div class="product-info"><h3>${p.name}</h3><p>${p.desc}</p></div></article>`).join('')}
