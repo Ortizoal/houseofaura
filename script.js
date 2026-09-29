@@ -9,6 +9,9 @@ const products=[
  {name:'The Zuri Set',type:'sets',desc:'Polished comfort · Everyday',tone:'#b76b54'}
 ];
 const grid=document.querySelector('[data-products]');
+const orderEmail='latsuortiz@gmail.com';
+document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{a.href=`mailto:${orderEmail}`;a.textContent=orderEmail});
+document.querySelector('#orderForm').addEventListener('submit',e=>{e.stopImmediatePropagation();e.preventDefault();const data=new FormData(e.currentTarget);const subject=encodeURIComponent(`House of Aura order enquiry from ${data.get('name')}`);const body=encodeURIComponent(`Name: ${data.get('name')}\nEmail: ${data.get('email')}\nPieces: ${data.get('dress')}\nLocation: ${data.get('location')}`);window.location.href=`mailto:${orderEmail}?subject=${subject}&body=${body}`;document.querySelector('[data-success]').hidden=false},true);
 function render(filter='all'){grid.innerHTML=products.filter(p=>filter==='all'||p.type===filter).map(p=>`<article class="product-card" data-name="${p.name}"><div class="product-image" style="--tone:${p.tone}"></div><div class="product-info"><h3>${p.name}</h3><p>${p.desc}</p></div></article>`).join('')}
 render();
 document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render(btn.dataset.filter)}));
