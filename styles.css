@@ -5,7 +5,7 @@
 :root{--green:#0b6435;--deep:#064324;--lime:#ffffff;--cream:#fbfcf9;--ink:#132319;--muted:#68756d;--line:#d7e1d9}
 .hero-intro{max-width:470px;color:#e5efe7;font-size:16px;line-height:1.6;margin:0 0 28px}
 .reel{width:100%;background:var(--green);line-height:0;overflow:hidden;display:grid;place-items:center}
-.reel-video{display:block;width:60%;height:min(86vh,960px);object-fit:contain;object-position:center;background:var(--green);opacity:.72}
+.reel-video{display:block;width:70%;height:min(86vh,960px);object-fit:contain;object-position:center;background:var(--green);opacity:.72}
 @media (min-width:801px) and (max-width:1200px){.reel-video{height:min(78vh,780px)}}
 @media (max-width:800px){.reel-video{height:auto;max-height:78vh;object-fit:contain}}
 .site-header{box-shadow:0 8px 24px rgba(6,67,36,.04)}
