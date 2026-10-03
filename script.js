@@ -9,14 +9,17 @@ const products=[
  {name:'The Zuri Set',type:'sets',desc:'Polished comfort · Everyday',tone:'#b76b54'}
 ];
 const grid=document.querySelector('[data-products]');
+const prices={'The Amara Dress':'GH₵ 850','The Aura Set':'GH₵ 720','The Yara Dress':'GH₵ 1,150','The Enyonam Dress':'GH₵ 980','Purple Bubu':'GH₵ 680','The Sade Dress':'GH₵ 1,250','The Aria Dress':'GH₵ 890','The Zuri Set':'GH₵ 760'};
 const orderEmail='latsuortiz@gmail.com';
 document.querySelector('#email').closest('label').insertAdjacentHTML('afterend','<label for="phone">Phone number<input id="phone" type="tel" name="phone" required placeholder="e.g. 020 604 7722" /></label>');
 document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{a.href=`mailto:${orderEmail}`;a.textContent=orderEmail});
 document.querySelector('#orderForm').addEventListener('submit',async e=>{e.stopImmediatePropagation();e.preventDefault();const form=e.currentTarget;const data=new FormData(form);data.append('_subject',`House of Aura order enquiry from ${data.get('name')}`);data.append('_captcha','false');try{const response=await fetch(`https://formsubmit.co/ajax/${orderEmail}`,{method:'POST',headers:{Accept:'application/json'},body:data});if(!response.ok)throw new Error('Submission failed');form.reset();document.querySelector('[data-success]').hidden=false}catch(error){alert('We could not send your enquiry right now. Please try again.')}},true);
-function render(filter='all'){grid.innerHTML=products.filter(p=>filter==='all'||p.type===filter).map(p=>`<article class="product-card" data-name="${p.name}"><div class="product-image" style="--tone:${p.tone}"></div><div class="product-info"><h3>${p.name}</h3><p>${p.desc}</p></div></article>`).join('')}
+function render(filter='all'){grid.innerHTML=products.filter(p=>filter==='all'||p.type===filter).map(p=>`<article class="product-card" data-name="${p.name}"><div class="product-image" style="--tone:${p.tone}"></div><div class="product-info"><h3>${p.name}</h3><p>${p.desc}</p><strong>${prices[p.name]}</strong></div></article>`).join('')}
 render();
 document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render(btn.dataset.filter)}));
 document.querySelector('[data-menu]').addEventListener('click',()=>document.querySelector('[data-mobile-menu]').classList.toggle('open'));
+document.querySelectorAll('[data-section-view]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.body.className=`section-view view-${a.dataset.sectionView}`;document.querySelector('[data-mobile-menu]').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'})}));
+document.querySelector('.brand').addEventListener('click',()=>document.body.className='');
 document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>document.querySelector('[data-mobile-menu]').classList.remove('open')));
 document.querySelectorAll('a[href="#order"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.body.classList.add('order-view');document.querySelector('#order').scrollIntoView({behavior:'smooth'});}));
 document.querySelectorAll('a[href^="#"]:not([href="#order"])').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('order-view')));
