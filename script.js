@@ -10,8 +10,11 @@ const products=[
 ];
 const grid=document.querySelector('[data-products]');
 const prices={'The Amara Dress':'GH₵ 850','The Aura Set':'GH₵ 720','The Yara Dress':'GH₵ 1,150','The Enyonam Dress':'GH₵ 980','Purple Bubu':'GH₵ 680','The Sade Dress':'GH₵ 1,250','The Aria Dress':'GH₵ 890','The Zuri Set':'GH₵ 760'};
-const orderEmail='latsuortiz@gmail.com';
-document.querySelector('#email').closest('label').insertAdjacentHTML('afterend','<label for="phone">Phone number<input id="phone" type="tel" name="phone" required placeholder="e.g. 020 604 7722" /></label>');
+const orderEmail='jessicaxr198@gmail.com';
+document.querySelector('#email').closest('label').insertAdjacentHTML('afterend','<label for="phone">Phone number<input id="phone" type="tel" name="phone" required placeholder="e.g. 024 245 6876" /></label>');
+const contactConnect=document.querySelector('footer > div:nth-child(3)');
+contactConnect.innerHTML='<h3>Connect</h3><a href="tel:+233242456876">024 245 6876</a><a href="https://wa.me/233242456876" target="_blank" rel="noreferrer">WhatsApp</a><a href="https://www.tiktok.com/@house_of_aura1" target="_blank" rel="noreferrer">TikTok</a><a href="mailto:jessicaxr198@gmail.com">jessicaxr198@gmail.com</a>';
+document.querySelector('.whatsapp-link').href='https://wa.me/233242456876';
 document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{a.href=`mailto:${orderEmail}`;a.textContent=orderEmail});
 document.querySelector('#orderForm').addEventListener('submit',async e=>{e.stopImmediatePropagation();e.preventDefault();const form=e.currentTarget;const data=new FormData(form);data.append('_subject',`House of Aura order enquiry from ${data.get('name')}`);data.append('_captcha','false');try{const response=await fetch(`https://formsubmit.co/ajax/${orderEmail}`,{method:'POST',headers:{Accept:'application/json'},body:data});if(!response.ok)throw new Error('Submission failed');form.reset();document.querySelector('[data-success]').hidden=false}catch(error){alert('We could not send your enquiry right now. Please try again.')}},true);
 function render(filter='all'){grid.innerHTML=products.filter(p=>filter==='all'||p.type===filter).map(p=>`<article class="product-card" data-name="${p.name}"><div class="product-image" style="--tone:${p.tone}"></div><div class="product-info"><h3>${p.name}</h3><p>${p.desc}</p><strong>${prices[p.name]}</strong></div></article>`).join('')}
