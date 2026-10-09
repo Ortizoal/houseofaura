@@ -24,6 +24,7 @@ render=(filter='all')=>{baseRender(filter);document.querySelectorAll('.product-c
 render();
 document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render(btn.dataset.filter)}));
 document.querySelectorAll('a[href="#shop"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.body.className='section-view view-shop';document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.filter==='dresses'));render('dresses');document.querySelector('[data-mobile-menu]').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'})}));
+document.querySelectorAll('a[href="#faq"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.body.className='section-view view-faq';document.querySelector('[data-mobile-menu]').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'})}));
 document.querySelector('[data-menu]').addEventListener('click',()=>document.querySelector('[data-mobile-menu]').classList.toggle('open'));
 document.querySelectorAll('[data-section-view]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.body.className=`section-view view-${a.dataset.sectionView}`;document.querySelector('[data-mobile-menu]').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'})}));
 document.querySelector('.brand').addEventListener('click',()=>document.body.className='');
