@@ -24,3 +24,5 @@ body.view-contact footer>div{display:block!important}body.view-contact footer .f
 .footer-bottom{justify-content:center!important;text-align:center;gap:24px}
 @media(max-width:800px){.faq-heading{grid-template-columns:1fr;gap:20px}.faq-list summary{font-size:18px}}
 body.view-faq footer{display:grid;min-height:calc(100vh - 124px)}
+body.view-faq main > *{display:none!important}
+body.view-faq main > .faq{display:block!important;min-height:calc(100vh - 124px)}
