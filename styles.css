@@ -39,3 +39,54 @@ body.view-faq main > .faq{display:block!important;min-height:calc(100vh - 124px)
 @keyframes hero-stamp-enter{from{opacity:0;transform:translate3d(0,18px,0) scale(.98)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
 @media(prefers-reduced-motion:reduce){.hero-stamp{animation:none}}
 @media(max-width:800px){.hero-art .hero-stamp{bottom:18%;right:5%;padding:10px 12px;font-size:clamp(42px,10vw,58px)}.hero-stamp small{font-size:9px;letter-spacing:.16em}}
+
+/* Final design system: editorial, spacious, and accessible. */
+:root{
+  --green:#0b6435;
+  --deep:#064324;
+  --accent:#dcebbf;
+  --cream:#fbfcf9;
+  --ink:#132319;
+  --muted:#68756d;
+  --line:#d7e1d9;
+  --content-width:1280px;
+  --section-x:8%;
+  --section-y:96px;
+}
+
+body{font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.site-header{padding-inline:var(--section-x)}
+.section{padding:var(--section-y) var(--section-x)}
+.hero-copy{padding:12% 8% 11% 12%}
+.hero h1{font-size:clamp(48px,6.5vw,88px);line-height:.98;max-width:760px}
+.hero-copy>p:not(.eyebrow),.hero-intro{font-size:16px;line-height:1.65}
+.eyebrow,.section-kicker{margin-bottom:20px;font-size:11px;line-height:1.4}
+.intro-grid,.faq-heading,.order{gap:10%}
+.intro p,.faq-heading p{line-height:1.7}
+.product-grid{gap:28px 24px}
+.product-info{padding:16px 0 0}
+.product-info h3{font-size:19px;line-height:1.25}
+.product-info p{line-height:1.45}
+.button{min-height:48px;padding:14px 20px;line-height:1.2}
+.button:focus-visible,.filter:focus-visible,.text-link:focus-visible,.whatsapp-link:focus-visible,
+.desktop-nav a:focus-visible,.mobile-menu a:focus-visible,.menu-btn:focus-visible,
+input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+input,textarea{line-height:1.5}
+.faq-list details{padding:24px 0}
+.faq-list summary{line-height:1.35}
+.statement{padding:96px var(--section-x)}
+.statement h2{line-height:1.04}
+footer{padding:64px var(--section-x) 24px}
+
+@media(max-width:800px){
+  :root{--section-x:7%;--section-y:64px}
+  .hero-copy{padding:72px var(--section-x) 60px}
+  .hero h1{font-size:clamp(44px,12vw,62px)}
+  .hero-copy>p:not(.eyebrow),.hero-intro{font-size:15px}
+  .section-heading{margin-bottom:36px}
+  .product-grid{gap:24px 14px}
+  .product-info{padding-top:12px}
+  .product-info h3{font-size:17px}
+  .statement{padding:72px var(--section-x)}
+  footer{padding:52px var(--section-x) 24px}
+}
