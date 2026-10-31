@@ -13,8 +13,10 @@
 .order{display:none;background:white}
 .order-copy{display:none}
 .order-form{max-width:720px;margin:0 auto}
-body.order-view main > :not(#order),body.order-view footer{display:none}
-body.order-view .order{display:block;min-height:calc(100vh - 124px)}
+body.order-view main > :not(#order){display:none}
+body.order-view .order{display:grid;min-height:calc(100vh - 124px)}
+body.order-view .order-copy{display:block}
+body.order-view footer{display:grid;min-height:calc(100vh - 124px)}
 .product-image{background:#edf3ed;border-radius:2px}
 .product-image.has-photo:before{display:none}
 .button{transition:transform .2s ease,box-shadow .2s ease}.button:hover{box-shadow:0 10px 24px rgba(6,67,36,.14)}
@@ -24,6 +26,9 @@ body.view-shop main>.faq{display:none}
 body.view-contact footer>div{display:block!important}body.view-contact footer .footer-bottom{display:flex!important;justify-content:center;align-items:center;text-align:center;gap:24px}
 .footer-bottom{justify-content:center!important;text-align:center;gap:24px}
 @media(max-width:800px){.faq-heading{grid-template-columns:1fr;gap:20px}.faq-list summary{font-size:18px}}
+.product-slideshow{position:relative;aspect-ratio:4/5;overflow:hidden;background:#edf3ed}.slide-image{width:100%;height:100%;object-fit:cover;display:block}.slide-arrow{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:var(--green);font-size:25px;line-height:1;cursor:pointer;z-index:2}.slide-prev{left:12px}.slide-next{right:12px}.slide-dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:2}.slide-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.65)}.slide-dot.active{background:#fff;transform:scale(1.35)}
+.product-modal-image .product-slideshow{height:100%;min-height:520px;aspect-ratio:auto}.product-modal-image .slide-image{object-fit:cover}
+@media(max-width:800px){.product-modal-image .product-slideshow{min-height:300px}}
 .product-modal{display:none;position:fixed;inset:0;z-index:20;background:rgba(6,67,36,.58);padding:5vh 6%;align-items:center;justify-content:center}.product-modal.open{display:flex}.product-modal-card{position:relative;display:grid;grid-template-columns:1fr 1fr;max-width:900px;width:100%;max-height:90vh;overflow:auto;background:var(--cream);box-shadow:0 20px 60px rgba(0,0,0,.25)}.product-modal-image{min-height:520px;background:#edf3ed;background-size:cover;background-position:center}.product-modal-copy{padding:58px 10% 50px}.product-modal-copy h2{font:500 clamp(38px,4vw,58px) 'Playfair Display';line-height:1.04;margin:0 0 14px}.product-modal-copy>strong{display:block;color:var(--green);font-size:16px;margin-bottom:28px}.product-modal-copy>p:not(.section-kicker){color:var(--muted);line-height:1.65}.product-modal-copy b{color:var(--ink)}.product-modal-copy .button{margin-top:18px}.product-modal-close{position:absolute;right:18px;top:12px;border:0;background:transparent;color:var(--green);font-size:32px;line-height:1;cursor:pointer;z-index:1}
 @media(max-width:800px){.product-modal{padding:3vh 5%}.product-modal-card{grid-template-columns:1fr;max-height:94vh}.product-modal-image{min-height:300px}.product-modal-copy{padding:34px 8% 36px}}
 body.view-faq footer{display:grid;min-height:calc(100vh - 124px)}
