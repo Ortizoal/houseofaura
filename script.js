@@ -1,13 +1,13 @@
 const products=[
- {id:'nia',name:'Nia Dress',type:'dresses',desc:'Statement silhouette · Occasion',price:'GH₵ 1,000',images:['NIA 1.jpg.jpeg','NIA 2.jpg.jpeg','NIA3.jpg.jpeg']},
- {id:'enyo',name:'Enyo Dress',type:'dresses',desc:'Flattering fit · Ready-to-wear',price:'GH₵ 650',images:['ENYO 1.jpg.jpeg','ENYO 2.jpg.jpeg','ENYO 3.jpg.jpeg']},
- {id:'patty',name:'Patty Dress',type:'dresses',desc:'Playful detail · Ready-to-wear',price:'GH₵ 600',images:['PATTY 1.jpg.jpeg','PATTY 2.jpg.jpeg','PATTY 3.jpg.jpeg']},
- {id:'aura',name:'Aura Set',type:'sets',desc:'Playful separates · Everyday',price:'GH₵ 350',images:['AURA 1.jpg.jpeg','AURA 2.jpg.jpeg','AURA 3.jpg.jpeg']},
- {id:'makena',name:'Makena Set',type:'sets',desc:'Polished comfort · Everyday',price:'GH₵ 350',images:['MAKENA 1.jpg.jpeg','MAKENA 2.jpg.jpeg']},
- {id:'joan',name:'Joan Dress',type:'occasion',desc:'Elegant movement · Occasion',price:'GH₵ 1,200',images:['JOAN 1.jpg.jpeg','JOAN 2.jpg.jpeg']},
- {id:'malaika',name:'Malaika Dress',type:'occasion',desc:'Feminine ease · Occasion',price:'GH₵ 700',images:['MALAIKA 1.jpg.jpeg','MALAIKA 2.jpg.jpeg']},
- {id:'sica',name:'Sica Dress',type:'dresses',desc:'Soft tailoring · Ready-to-wear',price:'GH₵ 400',images:['SICA 1.jpg.jpeg','SICA 2.jpg.jpeg','SICA 3.jpg.jpeg']},
- {id:'tiwa',name:'Tiwa Dress',type:'dresses',desc:'Flattering fit · Ready-to-wear',price:'GH₵ 800',images:['TIWA 1.jpg.jpeg','TIWA 2.jpg.jpeg']}
+ {id:'nia',name:'Nia',type:'dresses',desc:'Statement silhouette · Occasion',price:'GH₵ 1,000',images:['NIA 1.jpg.jpeg','NIA 2.jpg.jpeg','NIA3.jpg.jpeg']},
+ {id:'enyo',name:'Enyo',type:'dresses',desc:'Flattering fit · Ready-to-wear',price:'GH₵ 650',images:['ENYO 1.jpg.jpeg','ENYO 2.jpg.jpeg','ENYO 3.jpg.jpeg']},
+ {id:'patty',name:'Patty',type:'dresses',desc:'Playful detail · Ready-to-wear',price:'GH₵ 600',images:['PATTY 1.jpg.jpeg','PATTY 2.jpg.jpeg','PATTY 3.jpg.jpeg']},
+ {id:'aura',name:'Aura',type:'sets',desc:'Playful separates · Everyday',price:'GH₵ 350',images:['AURA 1.jpg.jpeg','AURA 2.jpg.jpeg','AURA 3.jpg.jpeg']},
+ {id:'makena',name:'Makena Skirt',type:'sets',desc:'Polished comfort · Everyday',price:'GH₵ 350',images:['MAKENA 1.jpg.jpeg','MAKENA 2.jpg.jpeg']},
+ {id:'joan',name:'Joan',type:'occasion',desc:'Elegant movement · Occasion',price:'GH₵ 1,200',images:['JOAN 1.jpg.jpeg','JOAN 2.jpg.jpeg']},
+ {id:'malaika',name:'Malaika',type:'occasion',desc:'Feminine ease · Occasion',price:'GH₵ 700',images:['MALAIKA 1.jpg.jpeg','MALAIKA 2.jpg.jpeg']},
+ {id:'sica',name:'Sica',type:'dresses',desc:'Soft tailoring · Ready-to-wear',price:'GH₵ 400',images:['SICA 1.jpg.jpeg','SICA 2.jpg.jpeg','SICA 3.jpg.jpeg']},
+ {id:'tiwa',name:'Tiwa',type:'dresses',desc:'Flattering fit · Ready-to-wear',price:'GH₵ 800',images:['TIWA 1.jpg.jpeg','TIWA 2.jpg.jpeg']}
 ];
 const grid=document.querySelector('[data-products]'), productDetails={dresses:{sizes:'8, 10, 12, 14, 16, 18, 20'},sets:{sizes:'8, 10, 12, 14, 16, 18, 20'},occasion:{sizes:'8, 10, 12, 14, 16, 18, 20'}}, orderEmail='jessicaxr198@gmail.com';
 const sizeChart=[['8','35','27','39/40'],['10','37','30','40/42'],['12','39','31','44'],['14','40','32','46'],['16','43','34','48'],['18','45','36','52'],['20','47','39','54']];
