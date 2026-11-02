@@ -44,3 +44,8 @@ if(modal){const modalCard=modal.querySelector('.product-modal-card'),modalName=m
 if(sizeChartModal){const sizeCard=sizeChartModal.querySelector('.size-chart-card'),sizeHeading=sizeChartModal.querySelector('h2');sizeHeading.id='size-chart-title';sizeCard.setAttribute('aria-labelledby','size-chart-title');}
 const orderForm=document.querySelector('#orderForm');if(orderForm){const error=document.createElement('p');error.className='form-error';error.setAttribute('role','alert');error.hidden=true;orderForm.querySelector('[data-success]').after(error);orderForm.insertAdjacentHTML('afterbegin','<label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>');const nativeAlert=window.alert;window.alert=message=>{error.textContent=message+' You can also use WhatsApp to contact us directly.';error.hidden=false;};}
 });
+
+const productNotes = modal?.querySelector('[data-modal-desc]');
+if (productNotes) {
+  productNotes.insertAdjacentHTML('afterend', '<div class="product-notes"><p><span aria-hidden="true">✓</span><b>Production begins after payment confirmation</b></p><p><span aria-hidden="true">✓</span><b>Order timeline:</b> Custom orders typically take up to two weeks</p></div>');
+}

@@ -1,0 +1,50 @@
+.announcement {
+  animation: announcement-enter 1s ease-out both;
+}
+
+@keyframes announcement-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement {
+    animation: none;
+  }
+}
+
+.product-notes {
+  margin: 24px 0 8px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 4px 0;
+}
+
+.product-notes p {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 12px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.product-notes p span {
+  flex: 0 0 auto;
+  color: var(--green);
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.product-notes b {
+  color: var(--ink);
+  font-weight: 600;
+}
