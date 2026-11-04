@@ -5,10 +5,10 @@
 :root{--green:#0b6435;--deep:#064324;--lime:#ffffff;--cream:#fbfcf9;--ink:#132319;--muted:#68756d;--line:#d7e1d9}
 .hero-intro{max-width:470px;color:#e5efe7;font-size:16px;line-height:1.6;margin:0 0 28px}
 .reel{width:100%;background:var(--cream);line-height:0;overflow:hidden;display:grid;place-items:center}
-.reel-video{display:block;width:min(100%,620px);height:min(86vh,960px);object-fit:contain;object-position:center;background:transparent;opacity:1}
+.reel-video{display:block;width:min(100%,520px);height:min(86vh,960px);object-fit:contain;object-position:center;background:transparent;opacity:1}
 .reel-video::-webkit-media-controls{display:none}
 @media (min-width:801px) and (max-width:1200px){.reel-video{height:min(78vh,780px)}}
-@media (max-width:800px){.reel-video{height:auto;max-height:78vh;object-fit:contain}}
+@media (max-width:800px){.reel-video{width:100%;height:auto;max-height:78vh;object-fit:contain}}
 .site-header{box-shadow:0 8px 24px rgba(6,67,36,.04)}
 .order{display:none;background:white}
 .order-copy{display:none}
